@@ -1,0 +1,52 @@
+.pokemon {
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(255, 255, 255, 0.699)
+  );
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  border-radius: 0.5rem;
+  box-shadow: 10px 10px 30px rgba(155, 155, 155, 0.575);
+  .pokemonBg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-position: left;
+    background-size: 150%;
+    opacity: 0.2;
+    background-repeat: no-repeat;
+    object-fit: cover;
+  }
+  h1 {
+    text-align: center;
+    margin: 1rem;
+    text-transform: uppercase;
+  }
+  img {
+    margin: auto auto;
+    width: 180px;
+    filter: drop-shadow(0 0 10px grey);
+    transition: all 0.5s;
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+  .detailLink {
+    margin: 1rem;
+    height: 30px;
+    a {
+      img {
+        border-radius: 50%;
+        width: 35px;
+        height: 35px;
+        &:hover {
+          transform: rotate(10deg);
+        }
+      }
+    }
+  }
+}
