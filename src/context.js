@@ -7,7 +7,7 @@ const AppProvider = ({ children }) => {
     "https://pokeapi.co/api/v2/pokemon?limit=20&offset=0"
   );
   const [loading, setLoading] = useState(false);
-  const [search, setSearch] = useState("");
+
   const [pokemons, setPokemons] = useState([]);
   const [nextUrl, setNextUrl] = useState();
   const [prevUrl, setPrevUrl] = useState();
@@ -15,7 +15,7 @@ const AppProvider = ({ children }) => {
   const fetchPokeData = async () => {
     setLoading(true);
     try {
-      const response = await fetch(`${url}${search}`);
+      const response = await fetch(`${url}`);
       const data = await response.json();
       console.log(data);
       setNextUrl(data.next);
@@ -43,10 +43,8 @@ const AppProvider = ({ children }) => {
     <AppContext.Provider
       value={{
         loading,
-        search,
         pokemons,
         setLoading,
-        setSearch,
         setPokemons,
         nextUrl,
         prevUrl,

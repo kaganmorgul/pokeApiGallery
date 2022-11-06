@@ -15,6 +15,7 @@ const PokemonDetail = () => {
     setPokemon(data);
     setMainPhoto(data.sprites.front_default);
   };
+
   useEffect(() => {
     getPoke();
   }, []);
